@@ -260,16 +260,16 @@ h3 {
 }
 
 .hero h1 {
-    font-size:
-        clamp(85px, 13vw, 190px);
-
-    line-height: 0.92;
-
-    letter-spacing: -0.035em;
+    font-size: clamp(70px, 11vw, 155px);
+    line-height: 0.88;
+    letter-spacing: -0.025em;
+    margin: 0;
 }
 
 .hero h1 span {
     color: var(--copper);
+    display: inline-block;
+    margin-bottom: 12px;
 }
 
 .hero-description {
@@ -450,10 +450,10 @@ h3 {
 }
 
 .intro h2 {
-    font-size:
-        clamp(75px, 12vw, 170px);
-
-    line-height: 0.92;
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+}
 
     margin-top: 10px;
 }
@@ -551,10 +551,9 @@ h3 {
 
 .section-heading h2,
 .gallery-heading h2 {
-    font-size:
-        clamp(75px, 11vw, 160px);
-
-    line-height: 0.92;
+    font-size: clamp(60px, 9vw, 125px);
+    line-height: 0.88;
+    letter-spacing: -0.02em;
 }
 
 
@@ -746,10 +745,10 @@ h3 {
 }
 
 .story-content h2 {
-    font-size:
-        clamp(65px, 8vw, 125px);
-
-    line-height: 0.92;
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+}
 
     margin-bottom: 40px;
 }
@@ -947,11 +946,10 @@ h3 {
 }
 
 .reviews h2 {
-    font-size:
-        clamp(70px, 11vw, 160px);
-
-    line-height: 0.82;
-
+    font-size: clamp(60px, 9vw, 125px);
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+}
     margin-top: 30px;
 }
 
@@ -1024,10 +1022,10 @@ h3 {
 }
 
 .contact h2 {
-    font-size:
-        clamp(80px, 11vw, 155px);
-
-    line-height: 0.92;
+    font-size: clamp(65px, 9vw, 125px);
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+}
 }
 
 .contact-info {
