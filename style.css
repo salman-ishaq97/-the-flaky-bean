@@ -263,7 +263,7 @@ h3 {
     font-size:
         clamp(85px, 13vw, 190px);
 
-    line-height: 0.82;
+    line-height: 0.92;
 
     letter-spacing: -0.035em;
 }
@@ -453,7 +453,7 @@ h3 {
     font-size:
         clamp(75px, 12vw, 170px);
 
-    line-height: 0.82;
+    line-height: 0.92;
 
     margin-top: 10px;
 }
@@ -554,7 +554,7 @@ h3 {
     font-size:
         clamp(75px, 11vw, 160px);
 
-    line-height: 0.82;
+    line-height: 0.92;
 }
 
 
@@ -749,7 +749,7 @@ h3 {
     font-size:
         clamp(65px, 8vw, 125px);
 
-    line-height: 0.82;
+    line-height: 0.92;
 
     margin-bottom: 40px;
 }
@@ -822,7 +822,7 @@ h3 {
     font-size:
         clamp(65px, 9vw, 135px);
 
-    line-height: 0.82;
+    line-height: 0.92;
 }
 
 .light-button {
@@ -1027,7 +1027,7 @@ h3 {
     font-size:
         clamp(80px, 11vw, 155px);
 
-    line-height: 0.82;
+    line-height: 0.92;
 }
 
 .contact-info {
