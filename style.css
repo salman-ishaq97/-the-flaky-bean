@@ -376,44 +376,35 @@ h3 {
 .coffee-placeholder {
     position: absolute;
 
-    width: 230px;
-    height: 230px;
-
-    display: grid;
-    place-items: center;
+    width: 360px;
+    height: 360px;
 
     border-radius: 50%;
 
-    background: var(--cream);
+    overflow: hidden;
 
-    border: 10px solid var(--green);
+    transform: rotate(-5deg);
 
-    font-size: 105px;
+    background: #ddd;
 
-    transform: rotate(-7deg);
+    border: 8px solid var(--cream);
 
     box-shadow:
-        20px 30px 0 rgba(45, 71, 57, 0.15);
+        20px 30px 0 rgba(45, 71, 57, 0.18);
+
+    z-index: 2;
 }
 
-.floating-label {
-    position: absolute;
+.coffee-placeholder img {
+    width: 100%;
+    height: 100%;
 
-    right: 0;
-    bottom: 60px;
+    object-fit: cover;
 
-    background: var(--green);
-    color: var(--cream);
+    display: block;
 
-    padding: 18px 25px;
-
-    font-family: Impact, sans-serif;
-    font-size: 23px;
-    line-height: 0.9;
-
-    transform: rotate(4deg);
+    transform: none;
 }
-
 
 /* =========================
    INTRO
