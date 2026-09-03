@@ -380,19 +380,17 @@ h3 {
     height: 360px;
 
     border-radius: 50%;
-
     overflow: hidden;
+
+    background: transparent;
+    border: 8px solid var(--cream);
 
     transform: rotate(-5deg);
 
-    background: #ddd;
-
-    border: 8px solid var(--cream);
+    z-index: 3;
 
     box-shadow:
         20px 30px 0 rgba(45, 71, 57, 0.18);
-
-    z-index: 2;
 }
 
 .coffee-placeholder img {
@@ -400,12 +398,12 @@ h3 {
     height: 100%;
 
     object-fit: cover;
+    object-position: center;
 
     display: block;
 
-    transform: none;
+    transform: rotate(5deg) scale(1.03);
 }
-
 /* =========================
    INTRO
 ========================= */
