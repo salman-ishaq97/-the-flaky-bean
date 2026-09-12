@@ -505,5 +505,42 @@
 
     <script src="script.js"></script>
 
+    
+    <!-- CART -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-header">
+        <div>
+            <p class="cart-label">// Your Order</p>
+            <h2>Your Cart</h2>
+        </div>
+
+        <button class="cart-close" id="cartClose" aria-label="Close cart">
+            ×
+        </button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Your cart is empty.</p>
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-total-row">
+            <span>Total</span>
+            <strong id="cartTotal">$0.00</strong>
+        </div>
+
+        <button class="checkout-button" id="checkoutButton">
+            Continue to Order →
+        </button>
+    </div>
+</aside>
+
+<button class="cart-button" id="cartButton" aria-label="Open shopping cart">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
+</button>
+
 </body>
 </html>
