@@ -541,6 +541,99 @@
     🛒
     <span class="cart-count" id="cartCount">0</span>
 </button>
+    <!-- ORDER FORM -->
+<div class="order-overlay" id="orderOverlay">
+
+    <div class="order-modal">
+
+        <div class="order-header">
+            <div>
+                <p class="cart-label">// Order Details</p>
+                <h2>Place Your Order</h2>
+            </div>
+
+            <button class="order-close" id="orderClose" aria-label="Close order form">
+                ×
+            </button>
+        </div>
+
+        <form id="orderForm">
+
+            <div class="form-group">
+                <label for="customerName">Your Name</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    name="customerName"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customerPhone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    name="customerPhone"
+                    placeholder="03XX XXXXXXX"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Order Type</label>
+
+                <div class="order-options">
+
+                    <label class="order-option">
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Pickup"
+                            checked
+                        >
+                        <span>🥡 Pickup</span>
+                    </label>
+
+                    <label class="order-option">
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Delivery"
+                        >
+                        <span>🛵 Delivery</span>
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="orderNotes">Special Instructions</label>
+                <textarea
+                    id="orderNotes"
+                    name="orderNotes"
+                    placeholder="Anything we should know?"
+                    rows="4"
+                ></textarea>
+            </div>
+
+            <div class="order-summary">
+                <div>
+                    <span>Order total</span>
+                    <strong id="orderTotal">$0.00</strong>
+                </div>
+            </div>
+
+            <button type="submit" class="place-order-button">
+                Place Order →
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 </body>
 </html>
