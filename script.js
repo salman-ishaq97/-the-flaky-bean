@@ -259,3 +259,150 @@ if (footerYear) {
 // ===============================
 
 document.body.classList.add("page-loaded");
+
+/* =========================
+   SHOPPING CART
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartButton = document.getElementById("cartButton");
+    const cartClose = document.getElementById("cartClose");
+    const cartDrawer = document.getElementById("cartDrawer");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+
+    let cart = JSON.parse(localStorage.getItem("flakyBeanCart")) || [];
+
+    function openCart() {
+        cartDrawer.classList.add("open");
+        cartOverlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeCart() {
+        cartDrawer.classList.remove("open");
+        cartOverlay.classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    function saveCart() {
+        localStorage.setItem("flakyBeanCart", JSON.stringify(cart));
+    }
+
+    function updateCart() {
+        cartItems.innerHTML = "";
+
+        if (cart.length === 0) {
+            cartItems.innerHTML = `
+                <p class="cart-empty">Your cart is empty.</p>
+            `;
+        } else {
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement("div");
+
+                itemElement.className = "cart-item";
+
+                itemElement.innerHTML = `
+                    <div class="cart-item-info">
+                        <h3>${item.name}</h3>
+                        <p>$${item.price.toFixed(2)} each</p>
+                    </div>
+
+                    <div class="cart-item-controls">
+                        <button class="quantity-button" data-action="decrease" data-index="${index}">
+                            −
+                        </button>
+
+                        <span>${item.quantity}</span>
+
+                        <button class="quantity-button" data-action="increase" data-index="${index}">
+                            +
+                        </button>
+
+                        <button class="remove-button" data-action="remove" data-index="${index}">
+                            ×
+                        </button>
+                    </div>
+                `;
+
+                cartItems.appendChild(itemElement);
+            });
+        }
+
+        const totalItems = cart.reduce(
+            (total, item) => total + item.quantity,
+            0
+        );
+
+        const totalPrice = cart.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0
+        );
+
+        cartCount.textContent = totalItems;
+        cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+
+        saveCart();
+    }
+
+    function addToCart(name, price) {
+        const existingItem = cart.find(item => item.name === name);
+
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                name: name,
+                price: price,
+                quantity: 1
+            });
+        }
+
+        updateCart();
+        openCart();
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+            const name = button.dataset.name;
+            const price = Number(button.dataset.price);
+
+            addToCart(name, price);
+        });
+    });
+
+    cartItems.addEventListener("click", event => {
+        const button = event.target.closest("button");
+
+        if (!button) return;
+
+        const index = Number(button.dataset.index);
+        const action = button.dataset.action;
+
+        if (action === "increase") {
+            cart[index].quantity += 1;
+        }
+
+        if (action === "decrease") {
+            cart[index].quantity -= 1;
+
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+        }
+
+        if (action === "remove") {
+            cart.splice(index, 1);
+        }
+
+        updateCart();
+    });
+
+    cartButton.addEventListener("click", openCart);
+    cartClose.addEventListener("click", closeCart);
+    cartOverlay.addEventListener("click", closeCart);
+
+    updateCart();
+});
