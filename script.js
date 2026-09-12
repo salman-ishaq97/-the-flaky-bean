@@ -406,3 +406,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCart();
 });
+/* =========================
+   ORDER FORM CONNECTION
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const checkoutButton = document.getElementById("checkoutButton");
+    const orderOverlay = document.getElementById("orderOverlay");
+    const orderClose = document.getElementById("orderClose");
+    const orderForm = document.getElementById("orderForm");
+    const orderTotal = document.getElementById("orderTotal");
+
+    const cartDrawer = document.getElementById("cartDrawer");
+    const cartOverlay = document.getElementById("cartOverlay");
+
+    function getCart() {
+        return JSON.parse(localStorage.getItem("flakyBeanCart")) || [];
+    }
+
+    function getCartTotal() {
+        const cart = getCart();
+
+        return cart.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0
+        );
+    }
+
+    function openOrderForm() {
+        const cart = getCart();
+
+        if (cart.length === 0) {
+            alert("Your cart is empty.");
+            return;
+        }
+
+        orderTotal.textContent = `$${getCartTotal().toFixed(2)}`;
+
+        cartDrawer.classList.remove("open");
+        cartOverlay.classList.remove("open");
+        document.body.style.overflow = "hidden";
+
+        orderOverlay.classList.add("open");
+    }
+
+    function closeOrderForm() {
+        orderOverlay.classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    checkoutButton.addEventListener("click", openOrderForm);
+
+    orderClose.addEventListener("click", closeOrderForm);
+
+    orderOverlay.addEventListener("click", event => {
+        if (event.target === orderOverlay) {
+            closeOrderForm();
+        }
+    });
+
+    orderForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        alert("Order form submitted! Online order processing will be added next.");
+
+        closeOrderForm();
+    });
+});
