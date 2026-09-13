@@ -521,11 +521,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         location.reload();
 
-    } catch (error) {
+       } catch (error) {
         console.error("Order submission failed:", error);
 
         alert(
             "Something went wrong. Please try again."
         );
     }
+});
 });
