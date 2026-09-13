@@ -465,11 +465,67 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    orderForm.addEventListener("submit", event => {
-        event.preventDefault();
+  orderForm.addEventListener("submit", async event => {
+    event.preventDefault();
 
-        alert("Order form submitted! Online order processing will be added next.");
+    const cart = getCart();
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    const customerName = document.getElementById("customerName").value;
+    const customerPhone = document.getElementById("customerPhone").value;
+    const orderType = document.querySelector(
+        'input[name="orderType"]:checked'
+    ).value;
+    const orderNotes = document.getElementById("orderNotes").value;
+
+    const items = cart.map(item =>
+        `${item.name} x${item.quantity}`
+    ).join(", ");
+
+    const total = getCartTotal().toFixed(2);
+
+    const orderData = {
+        customerName: customerName,
+        customerPhone: customerPhone,
+        orderType: orderType,
+        items: items,
+        orderNotes: orderNotes,
+        total: total
+    };
+
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxybAgkMZCZFBFhVcJBWi5U4fQRrsSOXodhOWNPi_jlYxkadm2tMWuhIpH-DdSk0UEbg/exec";
+
+    try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(orderData)
+        });
+
+        localStorage.removeItem("flakyBeanCart");
+
+        orderForm.reset();
+
+        alert(
+            "Your order has been received! We will contact you shortly."
+        );
 
         closeOrderForm();
-    });
+
+        location.reload();
+
+    } catch (error) {
+        console.error("Order submission failed:", error);
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+    }
 });
