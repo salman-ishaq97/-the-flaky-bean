@@ -734,7 +734,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             const GOOGLE_SCRIPT_URL =
-                "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
+                "https://script.google.com/macros/s/AKfycbwxybAgkMZCZFBFhVcJBWi5U4fQRrsSOXodhOWNPi_jlYxkadm2tMWuhIpH-DdSk0UEbg/exec";
 
 
             try {
