@@ -414,7 +414,7 @@ h3 {
 ========================= */
 
 .intro {
-    padding: 30px 0 120px;
+    padding: 70px 0 170px;
 }
 
 .intro-box {
@@ -513,9 +513,8 @@ h3 {
 ========================= */
 
 .menu-section {
-    padding: 120px 0;
+    padding: 160px 0 180px;
 }
-
 .section-heading {
     display: flex;
 
@@ -524,7 +523,7 @@ h3 {
 
     gap: 50px;
 
-    margin-bottom: 90px;
+    margin-bottom: 110px;
 }
 
 .pill {
@@ -555,11 +554,8 @@ h3 {
 
 .menu-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 55px 35px;
 }
 
 .menu-card {
@@ -694,18 +690,13 @@ h3 {
 ========================= */
 
 .story {
-    padding: 100px 0 140px;
+    padding: 170px 0 190px;
 }
 
 .story-grid {
     display: grid;
-
-    grid-template-columns:
-        0.9fr
-        1.1fr;
-
-    gap: 70px;
-
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 110px;
     align-items: center;
 }
 
@@ -778,7 +769,7 @@ h3 {
 ========================= */
 
 .feature {
-    padding: 0 0 130px;
+    padding: 0 0 180px;
 }
 
 .feature-box {
@@ -858,11 +849,11 @@ h3 {
 ========================= */
 
 .gallery {
-    padding: 120px 0;
+    padding: 170px 0;
 }
 
 .gallery-heading {
-    margin-bottom: 80px;
+    margin-bottom: 105px;
 }
 
 .gallery-grid {
@@ -936,7 +927,7 @@ h3 {
 
     color: var(--cream);
 
-    padding: 130px 0;
+    padding: 170px 0;
 }
 
 .reviews h2 {
@@ -948,7 +939,7 @@ h3 {
 }
 
 .review-grid {
-    margin-top: 90px;
+    margin-top: 120px;
 
     display: grid;
 
@@ -993,7 +984,7 @@ h3 {
 ========================= */
 
 .contact {
-    padding: 130px 0;
+    padding: 170px 0;
 }
 
 .contact-grid {
@@ -1061,7 +1052,7 @@ footer {
     color: var(--cream);
 
     padding:
-        100px 0 35px;
+        130px 0 45px;
 }
 
 .footer-content {
@@ -1318,7 +1309,33 @@ footer {
         gap: 70px;
     }
 }
+.intro {
+    padding: 50px 0 110px;
+}
 
+.menu-section {
+    padding: 100px 0 120px;
+}
+
+.story {
+    padding: 110px 0 130px;
+}
+
+.feature {
+    padding: 0 0 120px;
+}
+
+.gallery {
+    padding: 110px 0;
+}
+
+.reviews {
+    padding: 110px 0;
+}
+
+.contact {
+    padding: 110px 0;
+}
 
 /* =========================
    SMALL PHONES
@@ -1446,7 +1463,33 @@ footer {
         flex-wrap: wrap;
     }
 }
+.intro {
+    padding: 40px 0 90px;
+}
 
+.menu-section {
+    padding: 80px 0 100px;
+}
+
+.story {
+    padding: 90px 0 110px;
+}
+
+.feature {
+    padding-bottom: 100px;
+}
+
+.gallery {
+    padding: 90px 0;
+}
+
+.reviews {
+    padding: 90px 0;
+}
+
+.contact {
+    padding: 90px 0;
+}
 
 /* =========================
    ACCESSIBILITY
