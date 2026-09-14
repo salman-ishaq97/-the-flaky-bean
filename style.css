@@ -263,6 +263,7 @@ h3 {
     font-size: clamp(70px, 11vw, 155px);
     line-height: 0.88;
     letter-spacing: -0.025em;
+    word-spacing: 0.12em;
     margin: 0;
 }
 
@@ -447,6 +448,7 @@ h3 {
     font-size: clamp(60px, 9vw, 130px);
     line-height: 0.88;
     letter-spacing: -0.02em;
+    word-spacing: 0.12em;
 }
 
     margin-top: 10px;
@@ -547,8 +549,8 @@ h3 {
     font-size: clamp(60px, 9vw, 125px);
     line-height: 0.88;
     letter-spacing: -0.02em;
+    word-spacing: 0.12em;
 }
-
 
 /* MENU GRID */
 
@@ -733,6 +735,7 @@ h3 {
     font-size: clamp(55px, 7vw, 105px);
     line-height: 0.88;
     letter-spacing: -0.02em;
+    word-spacing: 0.12em;
 }
 
     margin-bottom: 40px;
@@ -807,6 +810,7 @@ h3 {
         clamp(65px, 9vw, 135px);
 
     line-height: 0.92;
+    word-spacing: 0.12em;
 }
 
 .light-button {
@@ -934,6 +938,7 @@ h3 {
     font-size: clamp(60px, 9vw, 125px);
     line-height: 0.88;
     letter-spacing: -0.02em;
+    word-spacing: 0.12em;
 }
     margin-top: 30px;
 }
@@ -1010,7 +1015,7 @@ h3 {
     font-size: clamp(65px, 9vw, 125px);
     line-height: 0.88;
     letter-spacing: -0.02em;
-}
+    word-spacing: 0.12em;
 }
 
 .contact-info {
