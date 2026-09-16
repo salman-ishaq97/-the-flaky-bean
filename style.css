@@ -703,16 +703,18 @@ h3 {
 }
 
 .story-image {
-    min-height: 650px;
-
+    width: 100%;
+    aspect-ratio: 3 / 2;
     border-radius: 40px;
-
-    background: var(--soft-green);
-
-    display: grid;
-    place-items: center;
-
     overflow: hidden;
+    background: var(--soft-green);
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .image-placeholder {
