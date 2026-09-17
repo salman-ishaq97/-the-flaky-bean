@@ -717,6 +717,11 @@ h3 {
     object-fit: cover;
 }
 
+@media (min-width: 901px) {
+    .story-image {
+        min-height: 650px;
+    }
+}
 .image-placeholder {
     width: 65%;
     aspect-ratio: 1;
